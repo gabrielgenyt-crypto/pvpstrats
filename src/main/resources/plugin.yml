@@ -1,0 +1,23 @@
+name: PvPAcademy
+version: ${project.version}
+main: com.pvpacademy.PvPAcademy
+api-version: '1.21'
+description: Structured PvP training for Minecraft 1.21+
+authors:
+  - PvPAcademy
+
+commands:
+  pvpa:
+    description: PvP Academy training commands
+    usage: /pvpa <train|stop|help>
+    aliases:
+      - pvpacademy
+      - pa
+
+permissions:
+  pvpacademy.train:
+    description: Start a training session
+    default: true
+  pvpacademy.admin:
+    description: Admin-level commands (reload, etc.)
+    default: op

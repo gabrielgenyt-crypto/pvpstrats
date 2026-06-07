@@ -1,0 +1,25 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# PvP Academy — Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Training arena location.
+# The plugin builds a flat stone platform here and spawns the training dummy.
+# For the beta, a single shared arena is used.  Move these far from your main
+# builds to avoid any world-edit side effects.
+arena:
+  world: "world"      # must be loaded when the plugin enables
+  x: 30000.5
+  y: 200.0
+  z: 30000.5
+
+# ─── W-Tap Module ─────────────────────────────────────────────────────────────
+wtap:
+  # Number of hits required to complete a session.
+  total-hits: 10
+
+  # Sprint-release timing thresholds (in server ticks, 20 ticks = 1 second).
+  # Release W 0–perfect-tick-range ticks before the hit  → PERFECT
+  # Release W perfect+1–good-tick-range ticks before hit → GOOD
+  # Anything else                                         → MISS
+  perfect-tick-range: 2
+  good-tick-range: 5
