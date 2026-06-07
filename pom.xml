@@ -6,15 +6,14 @@
 
     <groupId>com.pvpacademy</groupId>
     <artifactId>pvp-academy</artifactId>
-    <version>1.0.0-BETA</version>
+    <version>1.1.0-BETA</version>
     <packaging>jar</packaging>
 
     <name>PvP Academy</name>
     <description>Structured PvP training for Minecraft 1.21+</description>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -33,6 +32,14 @@
             <version>1.21.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Gson — bundled with Paper at runtime; needed here for compilation -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -43,13 +50,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
+                    <release>21</release>
                     <encoding>UTF-8</encoding>
-                    <!-- Enable text blocks, records, sealed classes, etc. -->
-                    <compilerArgs>
-                        <arg>--enable-preview</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
 
@@ -68,7 +70,7 @@
             </plugin>
         </plugins>
 
-        <!-- Substitute ${version} in plugin.yml -->
+        <!-- Substitute ${project.version} in plugin.yml -->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
